@@ -1,0 +1,30 @@
+//
+//  Photo.swift
+//  Project
+//
+//  Created by Azadeh Saleh on 2022-05-22.
+//
+
+import Foundation
+import CoreData
+import UIKit
+
+@objc(Users)
+class Users:NSManagedObject {
+
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Users> {
+        return NSFetchRequest<Users>(entityName: "Users")
+    }
+
+    @NSManaged public var age: Int16
+    @NSManaged public var email: String?
+    @NSManaged public var id: UUID?
+    @NSManaged public  var name: String?
+    @NSManaged public var password: String?
+    @NSManaged public var picture: UIImage?
+
+}
+
+extension Users : Identifiable {
+
+}
